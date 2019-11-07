@@ -9,12 +9,11 @@ export const useDarkMode = () => {
 
     useEffect (() => {
         //creating an if else statement to give option for darkmode
-        if(storedValue) {
-            body.classList.add('dark-mode');
-        } else {
+        storedValue ? 
+        body.classList.add('dark-mode') : 
             body.classList.remove('dark-mode');
         }
-    }, [storedValue])
+, [storedValue, body.classList])
 
     return [storedValue, setValue];
 }
